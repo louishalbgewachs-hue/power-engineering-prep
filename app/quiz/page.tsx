@@ -5,21 +5,33 @@ import thermodynamics from "./data/thermodynamics.json";
 import boilers from "./data/boilers.json";
 import electrical from "./data/electrical.json";
 
-const topics = {
+// Define the shape of a question
+type Question = {
+  question: string;
+  options: string[];
+  answer: string;
+  explanation: string;
+};
+
+// Define allowed topic keys
+type TopicKey = "Thermodynamics" | "Boilers" | "Electrical";
+
+// Map topics to their questions
+const topics: Record<TopicKey, Question[]> = {
   Thermodynamics: thermodynamics,
   Boilers: boilers,
   Electrical: electrical,
 };
 
 export default function QuizPage() {
-  const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
-  const [questions, setQuestions] = useState<any[]>([]);
+  const [selectedTopic, setSelectedTopic] = useState<TopicKey | null>(null);
+  const [questions, setQuestions] = useState<Question[]>([]);
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
   const [score, setScore] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
 
-  const startQuiz = (topic: string) => {
+  const startQuiz = (topic: TopicKey) => {
     setSelectedTopic(topic);
     setQuestions(topics[topic]);
     setCurrent(0);
@@ -57,7 +69,7 @@ export default function QuizPage() {
         {Object.keys(topics).map((topic) => (
           <button
             key={topic}
-            onClick={() => startQuiz(topic)}
+            onClick={() => startQuiz(topic as TopicKey)}
             className="block mb-2 px-4 py-2 bg-black text-white rounded"
           >
             {topic}
