@@ -1,0 +1,8 @@
+[
+  {
+    "question": "Ohm's law relates which quantities?",
+    "options": ["Voltage, current, resistance", "Power, energy, time", "Force, mass, acceleration", "Pressure, volume, temperature"],
+    "answer": "Voltage, current, resistance",
+    "explanation": "Ohm's law states that V = I × R (Voltage = Current × Resistance)."
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "question": "What is the first law of thermodynamics?",
+    "options": ["Energy cannot be created or destroyed", "Entropy always increases", "Force equals mass times acceleration", "None of the above"],
+    "answer": "Energy cannot be created or destroyed",
+    "explanation": "The first law of thermodynamics states that energy cannot be created or destroyed, only transformed."
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "question": "What is the purpose of a boiler?",
+    "options": ["Generate steam", "Store water", "Cool engines", "Measure temperature"],
+    "answer": "Generate steam",
+    "explanation": "Boilers are used to generate steam or hot water for heating and power."
+  }
+]
